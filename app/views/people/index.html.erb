@@ -1,0 +1,13 @@
+<h1>People</h1>
+<%= form_for(Person.new) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit %>
+<%- end %>
+<ul>
+<%- @people.each do |person| %>
+  <li><%= "#{person.name} (#{person.email})" %></li>
+<%- end %>
+</ul>
